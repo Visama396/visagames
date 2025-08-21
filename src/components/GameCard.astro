@@ -1,0 +1,13 @@
+---
+import MetacriticIcon from "./icons/MetacriticIcon.astro";
+
+const { game } = Astro.props;
+---
+
+<li class="bg-gray-800 text-white rounded-lg flex flex-col gap-2 h-80 relative transition hover:scale-[1.02]">
+    <img src={game.background_image} alt={game.name} class="w-full h-full object-cover" />
+    <section class="p-4 z-1 w-full absolute bottom-0 inline-block bg-slate-800/70 backdrop-blur-xs">
+        <h2 class="text-xl font-bold">{game.name}</h2>
+        <p class="text-md text-gray-300 flex items-center gap-2"><MetacriticIcon />{game.metacritic}</p>
+    </section>
+</li>
