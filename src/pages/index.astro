@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import GameCard from "../components/GameCard.astro";
+import GamesGrid from '../components/GamesGrid.jsx';
 
 const APIKEY = import.meta.env.API_KEY;
 
@@ -17,11 +18,12 @@ let games = await fetchGames();
 		<h1 class="text-3xl font-bold">Visagames</h1>
 	</header>
 	<main class="p-4">
-		<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+		<GamesGrid apikey={APIKEY} client:load />
+		<!--<ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 			{games.results.map((game: any) => (
 				<GameCard game={game} />
 			))}
-		</ul>
+		</ul>-->
 	</main>
 	<footer>
 		<p>Visagames</p>
